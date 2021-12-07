@@ -9,7 +9,7 @@ class App extends React.Component {
 	state = { videos: [], selectedVideo: null };
 
 	componentDidMount() {
-		this.onTermSubmit('frontend');
+		this.onTermSubmit('traversy media');
 	}
 
 	onTermSubmit = async (term) => {
@@ -35,8 +35,8 @@ class App extends React.Component {
 				<SearchBar onFormSubmit={this.onTermSubmit} />
 				<div className="container">
 					<div className="row">
-						<div className="col-2">
-							<VideoCategories />
+						<div className="col-3">
+							<VideoCategories onCategorySelect={this.onTermSubmit} />
 						</div>
 						<div className="col-6">
 							<VideoDetail video={this.state.selectedVideo} />
